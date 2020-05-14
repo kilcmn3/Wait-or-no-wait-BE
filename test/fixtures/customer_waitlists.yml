@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  waitlist: one
+  customer: one
+  actual_waitTime: MyString
+  estimate_waitTime: MyString
+  check_inTime: MyString
+  integet: 
+  boolean: 
+  boolean: 
+
+two:
+  waitlist: two
+  customer: two
+  actual_waitTime: MyString
+  estimate_waitTime: MyString
+  check_inTime: MyString
+  integet: 
+  boolean: 
+  boolean: 
