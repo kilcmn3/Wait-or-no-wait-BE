@@ -1,0 +1,2 @@
+class CustomerWaitlistsController < ApplicationController
+end
