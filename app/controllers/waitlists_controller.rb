@@ -1,18 +1,22 @@
 class WaitlistsController < ApplicationController
     def index
-        # byebug
-        wait_List =  Waitlist.last
+        wait_List =  Waitlist.all
         render json: wait_List, include: 'customers'
     end
 
+    ##TODO Owner params
     def create
-        wait_List = Waitlist.create(params_waitList)
-        render json: wait_List
+        owner =  Owner.last
+        if !Waitlist.find_by(owner_id: owner.id)
+            wait_list = Waitlist.new(waitlist_date: params["waitlist"],  owner_id: owner.id)
+            wait_list.save
+        end
+        render json: Waitlist.last
     end
 
-    private
+    # private
 
-    def params_waitList
-        params.require(:waitlist).permit(:waitlist_date, :owner_id)
-    end
+    # def params_waitList
+    #     params.require(:waitlist).permit(:waitlist_date)
+    # end
 end
