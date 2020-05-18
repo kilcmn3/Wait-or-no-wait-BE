@@ -6,9 +6,9 @@ class WaitlistsController < ApplicationController
 
     ##TODO Owner params
     def create
-        owner =  Owner.last
-        if !Waitlist.find_by(owner_id: owner.id)
-            wait_list = Waitlist.new(waitlist_date: params["waitlist"],  owner_id: owner.id)
+        owner = Owner.last
+        if !Waitlist.find_by(owner_id: owner["id"])
+            wait_list = Waitlist.new(waitlist_date: params["waitlist"],  owner_id: owner["id"])
             wait_list.save
         end
         render json: Waitlist.last
