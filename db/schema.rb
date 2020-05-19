@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_05_14_185118) do
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.string "contact"
+    t.boolean "reservation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
