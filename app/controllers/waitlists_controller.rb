@@ -6,7 +6,8 @@ class WaitlistsController < ApplicationController
             wait_List = Waitlist.new(waitlist_date: Date.today.to_s, owner_id: owner.id)
             wait_List.save
         end
-        render json: wait_List, include: 'customers'
+
+        render json: wait_List, include: "customers.customerWaitlists"
     end
 
     ##TODO Owner params
