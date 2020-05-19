@@ -1,7 +1,7 @@
 class WaitlistsController < ApplicationController
     def index
-        wait_List =  Waitlist.all
-        if !Waitlist.find_by(waitlist_date: Date.today.to_s)
+        wait_List =  Waitlist.find_by(waitlist_date: Date.today.to_s)
+        if !wait_List
             owner = Owner.last
             wait_List = Waitlist.new(waitlist_date: Date.today.to_s, owner_id: owner.id)
             wait_List.save
