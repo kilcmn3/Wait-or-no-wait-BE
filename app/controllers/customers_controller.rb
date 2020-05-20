@@ -11,16 +11,16 @@ class CustomersController < ApplicationController
         customer = Customer.create(params_customer)
         wait_List =  Waitlist.find_by(waitlist_date: Date.today.to_s)
 
-        if wait_List.customers.all.length == 0
-            count = 3
-        elsif wait_List.customers.all.length == 1
-            count = 6
-        else
-            count = wait_List.customers.all.length * 3 
+        filterWaitlist = wait_List.customerWaitlists.select {|target| target[:is_waiting] == false}
+
+        if filterWaitlist.length == 0 || filterWaitlist.length == 1
+            total_wait = filterWaitlist.length + 3
+        else 
+            total_wait = filterWaitlist.length * 3
         end
 
         cust_waitlist = CustomerWaitlist.new( 
-            estimate_waitTime: count, 
+            estimate_waitTime: total_wait, 
             check_inTime: Time.now().to_s, 
             party_size: params["wait_list"]["party_size"], 
             waitlist_id: wait_List.id, 
