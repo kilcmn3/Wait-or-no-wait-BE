@@ -16,6 +16,8 @@ class CustomersController < ApplicationController
             check_inTime: Time.now().to_s, 
             party_size: params["wait_list"]["party_size"], 
             waitlist_id: wait_List.id, 
+            is_waiting: false,
+            is_texted: false,
             customer_id: customer.id)
         cust_waitlist.save
         render json: cust_waitlist
