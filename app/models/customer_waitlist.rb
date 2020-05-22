@@ -15,7 +15,7 @@ class CustomerWaitlist < ApplicationRecord
     client.messages.create(
     from: from,
     to: to,
-    body: "You're next"
+    body: "We're ready to serve you now!"
     )
   end
 end
