@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
+gem 'twilio-ruby', '~> 5.35'
 gem 'active_model_serializers', '~> 0.10.10'
 gem 'dotenv-rails'
 gem 'faker', '~> 2.11'
