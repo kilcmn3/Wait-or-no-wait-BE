@@ -35,7 +35,8 @@ class CustomersController < ApplicationController
             is_texted: false,
             customer_id: customer.id)
         cust_waitlist.save
-        render json: cust_waitlist
+        
+        render json: wait_List, include: "customers.customerWaitlists"
     end
 
     private
