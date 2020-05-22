@@ -13,13 +13,7 @@ class CustomersController < ApplicationController
         wait_List =  Waitlist.find_by(waitlist_date: Date.today.to_s)
 
         filterWaitlist = wait_List.customerWaitlists.select {|target| target[:is_waiting] == false}
-
-        if filterWaitlist.length == 0 || filterWaitlist.length == 1
-            total_wait = filterWaitlist.length + 3
-        else 
-            total_wait = filterWaitlist.length * 3
-        end
-
+        
         if customer[:reservation]
             time_checkin = params[:customer][:time]
         else
