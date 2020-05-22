@@ -8,6 +8,6 @@ class CustomerWaitlistsController < ApplicationController
     private
 
     def  paramse_update
-        params.require(:customer_waitlist).permit(:is_waiting)
+        params.require(:customer_waitlist).permit(:is_waiting, :estimate_waitTime)
     end
 end
