@@ -1,12 +1,18 @@
 class CustomerWaitlistsController < ApplicationController
     def update
         customer_waitlist = CustomerWaitlist.find(params[:id])
-        if  params[:customer_waitlist][:estimate_waitTime] && params[:customer_waitlist][:estimate_waitTime] < 0
+        wait_List =  Waitlist.find_by(waitlist_date: Date.today.to_s)
+
+        if  params[:customer_waitlist][:estimate_waitTime] != nil
+            if  params[:customer_waitlist][:estimate_waitTime] < 0
             customer_waitlist.update(estimate_waitTime: 0)
-        else
+            end
+            customer_waitlist.update(paramse_update)
+        elsif params[:customer_waitlist][:is_texted]
+            # CustomerWaitlist.send_SMS
             customer_waitlist.update(paramse_update)
         end
-        render json: customer_waitlist
+         render json: wait_List, include: "customers.customerWaitlists"
 end
     
     private
