@@ -11,6 +11,8 @@ class CustomerWaitlistsController < ApplicationController
         elsif params[:customer_waitlist][:is_texted]
             # CustomerWaitlist.send_SMS
             customer_waitlist.update(paramse_update)
+        else
+            customer_waitlist.update(paramse_update)
         end
          render json: wait_List, include: "customers.customerWaitlists"
 end
