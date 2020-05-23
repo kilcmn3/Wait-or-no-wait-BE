@@ -3,6 +3,7 @@ class CustomerWaitlistsController < ApplicationController
         customer_waitlist = CustomerWaitlist.find(params[:id])
         wait_List =  Waitlist.find_by(waitlist_date: Date.today.to_s)
 
+
         if params[:customer_waitlist][:is_texted]
             CustomerWaitlist.send_SMS
         end
