@@ -10,20 +10,17 @@ class WaitlistsController < ApplicationController
         render json: wait_List, include: "customers.customerWaitlists"
     end
 
-    ##TODO Owner params
-    # def create
-    #     owner = Owner.last
-    #     wait_list= Waitlist.find_by(owner_id: owner.id)
-    #     if !wait_list
-    #         wait_list = Waitlist.new(waitlist_date: params["waitlist"],  owner_id: owner.id)
-    #         wait_list.save
-    #     end
-    #     render json: wait_list
-    # end
+    def search 
+        wait_List = Waitlist.find_by(waitlist_date: params[:_json].to_s.split("T")[0])
+        
+        if wait_List 
+            render json: wait_List, include: "customers.customerWaitlists"
+        else
+            remder json: {
+                error: "Search list no found.",
+                code: 400
+            }, status: 400
+        end
+    end
 
-    # private
-
-    # def params_waitList
-    #     params.require(:waitlist).permit(:waitlist_date)
-    # end
 end

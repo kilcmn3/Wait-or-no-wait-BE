@@ -6,20 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-CustomerWaitlist.destroy_all
-puts "Creating CustomerWaitLists"
-Waitlist.destroy_all
-puts "Creating WaitLists"
-Owner.destroy_all
-puts "Creating owner"
-Customer.destroy_all
-puts "Creating Customers"
+# CustomerWaitlist.destroy_all
+# puts "Creating CustomerWaitLists"
+# Waitlist.destroy_all
+# puts "Creating WaitLists"
+# Owner.destroy_all
+# puts "Creating owner"
+# Customer.destroy_all
+# puts "Creating Customers"
 
 
-ownerA = Owner.create(username: "1", password: "1", restaurant_name: "1", restaurant_location: "1", restaurant_contact: "1")
+# ownerA = Owner.create(username: "1", password: "1", restaurant_name: "1", restaurant_location: "1", restaurant_contact: "1")
 
-# waitlistA = Waitlist.create(waitlist_date: "05/14/2020", owner_id: ownerA.id)
+# waitlistA = Waitlist.create(waitlist_date: "2020-05-23", owner_id: 1)
 
-# customerA = Customer.create(name: "dav", contact: "1")
+# customerA = Customer.all.third.update(reservation: false)
 
-# customer_waitlistA = CustomerWaitlist.create(actual_waitTime: 10, estimate_waitTime: 20, check_inTime: "04:05 PM", party_size: 2, waitlist_id: waitlistA.id, customer_id: customerA.id)
+# customer_waitlistA = CustomerWaitlist.create(actual_waitTime: 10, estimate_waitTime: 20, check_inTime: "2020-05-23T22:16:10-05:00", party_size: 2, waitlist_id: 4, customer_id: customerA.id)  

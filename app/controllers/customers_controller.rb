@@ -9,7 +9,11 @@ class CustomersController < ApplicationController
     ##TODO: why params is sending with duplicate data?
     ##What if reservation is later than today? 
     def create
-        customer = Customer.create(params_customer)
+        customer =  Customer.find_by(contact: params[:customer][:contact])
+            if !customer
+                customer = Customer.create(params_customer)
+            end
+
         wait_List =  Waitlist.find_by(waitlist_date: Date.today.to_s)
 
         filterWaitlist = wait_List.customerWaitlists.select {|target| target[:is_waiting] == false}
