@@ -1,6 +1,6 @@
 class OwnersController < ApplicationController
     def login 
-        owner = Owner.find_by(email: params[:owner][:email])
+        owner = Owner.find_by(username: params[:email])
         render json: owner
     end
 

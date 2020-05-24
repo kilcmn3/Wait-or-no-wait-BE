@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   resources :owners do
     collection do 
       post :login, :action => 'login', :as => 'login'
-      post :singup,   :action => 'singup', :as => 'singup'
+      post :signup, :action => 'signup', :as => 'signup'
     end
   end
+
 end
