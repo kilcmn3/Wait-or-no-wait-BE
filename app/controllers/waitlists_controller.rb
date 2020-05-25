@@ -1,13 +1,13 @@
 class WaitlistsController < ApplicationController
     def index
         owner = Owner.find_by(id: params[:q] )
-        wait_List =  owner.Waitlists.find_by(waitlist_date: Date.today.to_s)
+        wait_List =  owner.waitlists.find_by(waitlist_date: Date.today.to_s)
         if !wait_List
             wait_List = Waitlist.new(waitlist_date: Date.today.to_s, owner_id: owner.id)
             wait_List.save
         end
 
-        #Option use include '*'
+    
         render json: wait_List, include: "customers.customerWaitlists"
     end
 

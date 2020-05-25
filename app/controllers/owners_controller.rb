@@ -4,9 +4,13 @@ class OwnersController < ApplicationController
         render json: owner
     end
 
+    def show
+        owner = Owner.find_by(id: params[:id])
+        render json: owner
+    end
+
     def signup
         owner = Owner.create(params_owner)
-        render json: owner
     end
 
     private
