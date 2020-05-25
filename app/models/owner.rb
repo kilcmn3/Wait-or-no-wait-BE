@@ -1,3 +1,3 @@
 class Owner < ApplicationRecord
-    has_many :Waitlists
+    has_many :waitlists
 end
