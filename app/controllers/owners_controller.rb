@@ -9,6 +9,14 @@ class OwnersController < ApplicationController
         render json: owner
     end
 
+    def update
+        owner = Owner.find_by(id: params[:id])
+        byebug
+        owner.update(params_owner)
+
+        render json: owner
+    end
+
     def signup
         owner = Owner.create(params_owner)
     end
@@ -16,6 +24,6 @@ class OwnersController < ApplicationController
     private
 
     def  params_owner
-        params.require(:owner).permit(:username, :password, :restaurant_name,:restaurant_location,:restaurant_contact)
+        params.require(:owner).permit(:username, :password, :restaurant_name, :restaurant_location, :restaurant_contact)
     end
 end
