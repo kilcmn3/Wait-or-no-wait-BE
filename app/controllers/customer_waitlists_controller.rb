@@ -9,7 +9,7 @@ class CustomerWaitlistsController < ApplicationController
             true
         end
             customer_waitlist.update(paramse_update)
-
+      
          render json: wait_List, include: "customers.customerWaitlists"
     end
     
