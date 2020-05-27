@@ -1,5 +1,6 @@
 class CustomerWaitlistsController < ApplicationController
     def update
+        
         customer_waitlist = CustomerWaitlist.find(params[:id])
         wait_List =  Waitlist.find_by(waitlist_date: Date.today.to_s)
 
@@ -8,7 +9,8 @@ class CustomerWaitlistsController < ApplicationController
             # CustomerWaitlist.send_SMS
             true
         end
-            customer_waitlist.update(paramse_update)
+
+        customer_waitlist.update(paramse_update)
       
          render json: wait_List, include: "customers.customerWaitlists"
     end

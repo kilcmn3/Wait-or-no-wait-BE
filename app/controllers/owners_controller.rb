@@ -11,7 +11,7 @@ class OwnersController < ApplicationController
 
     def update
         owner = Owner.find_by(id: params[:id])
-        byebug
+
         owner.update(params_owner)
 
         render json: owner
