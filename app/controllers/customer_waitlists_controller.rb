@@ -6,7 +6,7 @@ class CustomerWaitlistsController < ApplicationController
 
 
         if params[:customer_waitlist][:is_texted]
-            # CustomerWaitlist.send_SMS
+            CustomerWaitlist.send_SMS
             true
         end
 
