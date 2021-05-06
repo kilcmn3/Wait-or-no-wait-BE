@@ -82,4 +82,4 @@ production:
   <<: *default
   database: wait_or_no_wait_be_production
   username: wait_or_no_wait_be
-  password: <%= ENV['WAIT_OR_NO_WAIT_BE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>

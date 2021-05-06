@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.1'
+ruby '2.7.3'
 
 gem 'twilio-ruby', '~> 5.35'
 gem 'active_model_serializers', '~> 0.10.10'
