@@ -5,7 +5,7 @@ one:
   customer: one
   actual_waitTime: MyString
   estimate_waitTime: MyString
-  check_inTime: MyString
+  check_in_time: MyString
   integet: 
   boolean: 
   boolean: 
@@ -15,7 +15,7 @@ two:
   customer: two
   actual_waitTime: MyString
   estimate_waitTime: MyString
-  check_inTime: MyString
+  check_in_time: MyString
   integet: 
   boolean: 
   boolean: 

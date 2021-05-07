@@ -20,7 +20,7 @@ class CustomersController < ApplicationController
       
         cust_waitlist = CustomerWaitlist.new( 
             estimate_waitTime: params[:cust_waitlist][:estimate_waitTime],
-            check_inTime: params[:cust_waitlist][:checkIn],
+            check_in_time: params[:cust_waitlist][:checkIn],
             party_size: params[:wait_list][:party_size], 
             waitlist_id: wait_List.id, 
             is_waiting: false,
