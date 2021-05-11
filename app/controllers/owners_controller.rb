@@ -1,11 +1,11 @@
 class OwnersController < ApplicationController
     def login 
         owner = Owner.find_by(username: params[:email])
-        if owner
+        if !owner
+            
+            render json: {status: 400}
+        else
             render json: owner
-        else 
-            # puts owner
-            render json: {error: owner.erros.full_messmages}, status: 400
         end
     end
 
