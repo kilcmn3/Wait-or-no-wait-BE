@@ -1,7 +1,12 @@
 class OwnersController < ApplicationController
     def login 
         owner = Owner.find_by(username: params[:email])
-        render json: owner
+        if !owner
+            
+            render json: {status: 400}
+        else
+            render json: owner
+        end
     end
 
     def show
