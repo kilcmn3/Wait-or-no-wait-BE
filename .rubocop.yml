@@ -1,0 +1,22 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  DisabledByDefault: true
+
+require: rubocop-gitlab-security
+
+GitlabSecurity/DeepMunge:
+  Enabled: true
+GitlabSecurity/JsonSerialization:
+  Enabled: true
+GitlabSecurity/RedirectToParamsUpdate:
+  Enabled: true
+GitlabSecurity/SendFileParams:
+  Enabled: true
+GitlabSecurity/SqlInjection:
+  Enabled: true
+GitlabSecurity/SystemCommandInjection:
+  Enabled: true
+
+inherit_gem:
+  prettier: rubocop.yml

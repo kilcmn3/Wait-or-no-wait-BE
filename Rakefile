@@ -3,4 +3,7 @@
 
 require_relative 'config/application'
 
+require 'rubocop/rake_task'
+RuboCop::RakeTask.new { |task| task.requires << 'rubocop-gitlab-security' }
+
 Rails.application.load_tasks
