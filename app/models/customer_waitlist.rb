@@ -1,3 +1,5 @@
+# TODO: Might need to update with API key(possibly expired)
+
 require 'twilio-ruby'
 
 class CustomerWaitlist < ApplicationRecord
