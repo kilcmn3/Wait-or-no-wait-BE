@@ -2,9 +2,14 @@ class OwnersController < ApplicationController
   def login
     owner = Owner.find_by(username: params[:email])
     if !owner
-      render json: { status: 400 }
+      # Not Found EndPoint is good, but no data has been found
+      render nothing: true, status: 404
     else
-      render json: owner
+      render json: {status:{
+        code: 200
+      },
+      owner: owner
+    }
     end
   end
 
