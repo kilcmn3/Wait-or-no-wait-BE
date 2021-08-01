@@ -15,11 +15,10 @@
 # Customer.destroy_all
 # puts "Creating Customers"
 
-
 # ownerA = Owner.create(username: "1", password: "1", restaurant_name: "1", restaurant_location: "1", restaurant_contact: "1")
 
 # waitlistA = Waitlist.create(waitlist_date: "2020-05-23", owner_id: 1)
 
 # customerA = Customer.all.third.update(reservation: false)
 
-# customer_waitlistA = CustomerWaitlist.create(actual_waitTime: 10, estimate_waitTime: 20, check_inTime: "2020-05-23T22:16:10-05:00", party_size: 2, waitlist_id: 4, customer_id: customerA.id)  
+# customer_waitlistA = CustomerWaitlist.create(actual_waitTime: 10, estimate_waitTime: 20, check_inTime: "2020-05-23T22:16:10-05:00", party_size: 2, waitlist_id: 4, customer_id: customerA.id)

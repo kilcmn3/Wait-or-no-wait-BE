@@ -9,7 +9,7 @@ class CreateCustomerWaitlists < ActiveRecord::Migration[6.0]
       t.integer :party_size
       t.boolean :is_waiting
       t.boolean :is_texted
-      
+
       t.timestamps
     end
   end

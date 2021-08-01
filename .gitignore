@@ -23,3 +23,6 @@
 
 #Ignore env file
 .env
+
+#Rubocop config
+.rubbocop.yml
