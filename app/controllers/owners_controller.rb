@@ -1,5 +1,6 @@
 class OwnersController < ApplicationController
   def login
+    byebug
     owner = Owner.find_by(username: params[:email])
     if !owner
       render json: { status: 400 }
