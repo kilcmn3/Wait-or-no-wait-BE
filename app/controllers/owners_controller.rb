@@ -30,10 +30,15 @@ class OwnersController < ApplicationController
     owner = Owner.create(params_owner)
       if owner
         render json: {status:{
-        code:200
-      }}
+        code: 200
+      },
+      owner: owner
+    }
       else
-        render json: {message: "Something is going on"}   
+        render json: {status: {
+          code: 500,
+          message: "Information was not saved into DB"
+        }}   
       end
   end
 
