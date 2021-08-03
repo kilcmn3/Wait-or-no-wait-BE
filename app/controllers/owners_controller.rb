@@ -28,6 +28,13 @@ class OwnersController < ApplicationController
 
   def signup
     owner = Owner.create(params_owner)
+      if owner
+        render json: {status:{
+        code:200
+      }}
+      else
+        render json: {message: "Something is going on"}   
+      end
   end
 
   private
