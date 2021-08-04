@@ -1,11 +1,15 @@
 class OwnersController < ApplicationController
   def login
-    byebug
     owner = Owner.find_by(username: params[:email])
     if !owner
-      render json: { status: 400 }
+      # Not Found EndPoint is good, but no data has been found
+      render nothing: true, status: 404
     else
-      render json: owner
+      render json: {status:{
+        code: 200
+      },
+      owner: owner
+    }
     end
   end
 
@@ -24,6 +28,18 @@ class OwnersController < ApplicationController
 
   def signup
     owner = Owner.create(params_owner)
+      if owner
+        render json: {status:{
+        code: 200
+      },
+      owner: owner
+    }
+      else
+        render json: {status: {
+          code: 500,
+          message: "Information was not saved into DB"
+        }}   
+      end
   end
 
   private
